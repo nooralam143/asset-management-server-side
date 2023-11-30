@@ -120,9 +120,9 @@ app.get('/my-assets', async (req, res) => {
       console.log(id, myAsset);
       const updateMyAsset = {
         $set: {
-          // postTitle: post.postTitle,
-          // postImage: post.postImage,
-          // postCategory: post.postCategory,
+          productName: myAsset.productName,
+          productType: myAsset.productType,
+          productQuantity: myAsset.productQuantity,
         }
       }
       const result = await myAssetCollection.updateOne(filter, updateMyAsset, options);
